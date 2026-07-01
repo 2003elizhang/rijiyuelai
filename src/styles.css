@@ -287,7 +287,9 @@ button { color: inherit; }
 .social-team-screen { background: linear-gradient(180deg, #f1f8f3 0 335px, #fbfdfb 540px); }
 .social-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
 .social-header h1 { margin: 4px 0 0; font-size: 23px; letter-spacing: -.045em; }
+.invite-action { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
 .invite-button { height: 35px; padding: 0 12px; border: 0; border-radius: 13px; display: flex; align-items: center; gap: 4px; background: var(--ink); color: #fff; font-size: 9px; font-weight: 800; cursor: pointer; box-shadow: 0 11px 24px rgba(23,39,31,.14); }
+.invite-status { width: 116px; margin: 0; color: #607168; font-size: 7px; line-height: 1.35; text-align: right; }
 .goal-first-card { margin: 15px 0 10px; padding: 15px; border-color: #b9ddc5; border-radius: 24px; background: radial-gradient(circle at 92% 20%, rgba(178,221,190,.92), rgba(255,255,255,0) 34%), linear-gradient(145deg, #fff 10%, #e8f5ec 100%); box-shadow: var(--shadow); }
 .goal-main-row { display: grid; grid-template-columns: minmax(0, 1fr) 70px; gap: 11px; align-items: center; margin-top: 8px; }
 .goal-main-row h2 { margin: 0; font-size: 21px; letter-spacing: -.045em; line-height: 1.15; }

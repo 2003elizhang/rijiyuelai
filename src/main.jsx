@@ -331,6 +331,7 @@ function TeamScreen() {
   const [editingTeamGoal, setEditingTeamGoal] = useState(false);
   const [postDraft, setPostDraft] = useState("");
   const [commentDrafts, setCommentDrafts] = useState({});
+  const [inviteStatus, setInviteStatus] = useState("");
   const [posts, setPosts] = useState([
     {
       id: "lan",
@@ -377,6 +378,31 @@ function TeamScreen() {
   const teamSaved = 2380;
   const teamGoalPercent = Math.min(Math.round((teamSaved / teamGoalTarget) * 100), 100);
 
+  const shareTeamInvite = async () => {
+    const invite = {
+      title: "日记月累记账小队",
+      text: `加入我的记账小队：${teamGoal || "一起把钱攒下来"}`,
+      url: "https://2003elizhang.github.io/rijiyuelai/",
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(invite);
+        setInviteStatus("邀请已打开，可以发给朋友了");
+      } else if (navigator.clipboard) {
+        await navigator.clipboard.writeText(invite.url);
+        setInviteStatus("链接已复制，可以粘贴发给朋友");
+      } else {
+        setInviteStatus(invite.url);
+      }
+      window.setTimeout(() => setInviteStatus(""), 2600);
+    } catch (error) {
+      if (error.name !== "AbortError") {
+        setInviteStatus("暂时没法调起分享，请手动复制网页地址");
+      }
+    }
+  };
+
   const saveTeamGoal = () => {
     setTeamGoal(teamGoalDraft.trim());
     setTeamGoalTarget(Math.max(Number(teamGoalTargetDraft), 1));
@@ -422,7 +448,10 @@ function TeamScreen() {
           <p className="date-label">四人小队 · 第 9 天</p>
           <h1>我们这次要做到什么</h1>
         </div>
-        <button className="invite-button"><Icon name="add" size={17} />邀请</button>
+        <div className="invite-action">
+          <button className="invite-button" onClick={shareTeamInvite}><Icon name="add" size={17} />邀请</button>
+          {inviteStatus ? <p className="invite-status">{inviteStatus}</p> : null}
+        </div>
       </header>
 
       <section className="shared-goal-card social-goal-card goal-first-card">
