@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://2003elizhang.github.io/mint-ledger/sitemap.xml
