@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://2003elizhang.github.io/mint-ledger/sitemap.xml
+Sitemap: https://2003elizhang.github.io/rijiyuelai/sitemap.xml
