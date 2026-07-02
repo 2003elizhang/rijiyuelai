@@ -2,11 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
-const expensesSeed = [
-  { id: 1, type: "expense", name: "早餐", note: "豆浆和包子", amount: 8, time: "08:16", icon: "🥣" },
-  { id: 2, type: "expense", name: "通勤", note: "地铁", amount: 6, time: "09:02", icon: "🚇" },
-  { id: 3, type: "expense", name: "午餐", note: "公司楼下", amount: 18, time: "12:27", icon: "🍱" },
-];
+const expensesSeed = [];
 
 const categories = [
   { name: "餐饮", icon: "🥣" },
